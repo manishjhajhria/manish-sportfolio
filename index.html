@@ -395,43 +395,43 @@
           <div class="contact__form-wrapper animate-on-scroll" data-animate-delay="200">
             <form class="contact__form" id="contact-form" novalidate>
               
-              <div class="contact__form-group">
-                <input type="text" id="name" class="contact__input" required placeholder=" ">
+              <!-- Web3Forms Access Key -->
+              <input type="hidden" name="access_key" value="9447c722-65e9-4e95-ae3c-4c51d0063fc9">
+
+              <div class="contact__input-group">
+                <input type="text" id="name" name="name" class="contact__input" required placeholder=" ">
                 <label for="name" class="contact__label" data-lang-key="contact.formLabels.name">Your Name</label>
                 <span class="contact__error" id="error-name" data-lang-key="contact.validation.required">This field is required</span>
               </div>
 
-              <div class="contact__form-group">
-                <input type="email" id="email" class="contact__input" required placeholder=" ">
+              <div class="contact__input-group">
+                <input type="email" id="email" name="email" class="contact__input" required placeholder=" ">
                 <label for="email" class="contact__label" data-lang-key="contact.formLabels.email">Your Email</label>
                 <span class="contact__error" id="error-email" data-lang-key="contact.validation.emailInvalid">Please enter a valid email</span>
               </div>
 
-              <div class="contact__form-group">
-                <input type="text" id="subject" class="contact__input" required placeholder=" ">
+              <div class="contact__input-group">
+                <input type="text" id="subject" name="subject" class="contact__input" required placeholder=" ">
                 <label for="subject" class="contact__label" data-lang-key="contact.formLabels.subject">Subject</label>
                 <span class="contact__error" id="error-subject" data-lang-key="contact.validation.required">This field is required</span>
               </div>
 
-              <div class="contact__form-group">
-                <textarea id="message" class="contact__input contact__textarea" required placeholder=" "></textarea>
+              <div class="contact__input-group">
+                <textarea id="message" name="message" class="contact__input contact__textarea" required placeholder=" "></textarea>
                 <label for="message" class="contact__label" data-lang-key="contact.formLabels.message">Your Message</label>
                 <span class="contact__error" id="error-message" data-lang-key="contact.validation.messageTooShort">Message must be at least 10 characters</span>
               </div>
 
-              <button type="submit" class="btn btn--primary btn--full" id="submit-btn">
+              <button type="submit" class="btn btn--primary btn--full contact__submit" id="contact-submit">
                 <span class="btn__text" data-lang-key="contact.formLabels.send">Send Message</span>
                 <i data-lucide="send" class="btn__icon"></i>
-                <div class="btn__loader"></div>
               </button>
 
-              <div class="contact__success" id="contact-success">
-                <i data-lucide="check-circle-2"></i>
-                <span data-lang-key="contact.formLabels.sent">Message sent successfully!</span>
-              </div>
+              <div class="contact__status" id="contact-status"></div>
 
             </form>
           </div>
+
         </div>
 
       </div>

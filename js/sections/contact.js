@@ -149,18 +149,14 @@ MOI.ContactSection = (function () {
     var group = input.closest('.contact__input-group');
     if (!group) return;
 
-    // Remove existing error
-    clearError(input);
-
     group.classList.add('has-error');
     input.setAttribute('aria-invalid', 'true');
 
-    var errorEl = document.createElement('span');
-    errorEl.className = 'form-error';
-    errorEl.setAttribute('role', 'alert');
-    errorEl.textContent = message;
-
-    group.appendChild(errorEl);
+    var errorEl = group.querySelector('.contact__error');
+    if (errorEl) {
+      errorEl.textContent = message;
+      errorEl.classList.add('is-visible');
+    }
 
     // Subtle shake animation
     if (typeof gsap !== 'undefined') {
@@ -178,8 +174,10 @@ MOI.ContactSection = (function () {
     group.classList.remove('has-error');
     input.removeAttribute('aria-invalid');
 
-    var existing = group.querySelector('.form-error');
-    if (existing) existing.remove();
+    var errorEl = group.querySelector('.contact__error');
+    if (errorEl) {
+      errorEl.classList.remove('is-visible');
+    }
   }
 
   /* ── Submit ── */
@@ -191,24 +189,43 @@ MOI.ContactSection = (function () {
 
     // Set loading state
     setButtonState('sending');
+    if (successMsg) {
+      successMsg.className = 'contact__status';
+      successMsg.textContent = '';
+    }
 
-    // Simulate network request (no real backend)
-    setTimeout(function () {
-      setButtonState('sent');
-      showSuccessMessage();
-      form.reset();
+    var formData = new FormData(form);
 
-      // Reset floating labels
-      Object.keys(fields).forEach(function (key) {
-        if (fields[key]) toggleLabelState(fields[key]);
-      });
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: formData
+    })
+    .then(async function (response) {
+      var json = await response.json();
+      if (response.status === 200) {
+        setButtonState('sent');
+        showSuccessMessage(json.message || 'Message sent successfully!', 'success');
+        form.reset();
 
-      // Reset button after 3 seconds
-      setTimeout(function () {
+        // Reset floating labels
+        Object.keys(fields).forEach(function (key) {
+          if (fields[key]) toggleLabelState(fields[key]);
+        });
+
+        // Reset button after 5 seconds
+        setTimeout(function () {
+          setButtonState('default');
+          hideSuccessMessage();
+        }, 5000);
+      } else {
         setButtonState('default');
-        hideSuccessMessage();
-      }, 3000);
-    }, 1500);
+        showSuccessMessage(json.message || 'Something went wrong!', 'error');
+      }
+    })
+    .catch(function (error) {
+      setButtonState('default');
+      showSuccessMessage('Something went wrong!', 'error');
+    });
   }
 
   function setButtonState(state) {
@@ -241,32 +258,17 @@ MOI.ContactSection = (function () {
 
   /* ── Success message ── */
 
-  function showSuccessMessage() {
+  function showSuccessMessage(msg, type) {
     if (!successMsg) return;
 
-    successMsg.classList.add('visible');
+    successMsg.textContent = msg;
+    successMsg.className = 'contact__status ' + type;
 
     if (typeof gsap !== 'undefined') {
       gsap.fromTo(successMsg,
-        { opacity: 0, y: 20, scale: 0.9 },
-        {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          duration: 0.5,
-          ease: 'back.out(1.7)'
-        }
+        { opacity: 0, y: 10 },
+        { opacity: 1, y: 0, duration: 0.4, ease: 'power2.out' }
       );
-
-      // Checkmark draw animation (if SVG inside)
-      var check = successMsg.querySelector('.checkmark-path');
-      if (check) {
-        var length = check.getTotalLength();
-        gsap.fromTo(check,
-          { strokeDasharray: length, strokeDashoffset: length },
-          { strokeDashoffset: 0, duration: 0.8, delay: 0.3, ease: 'power2.out' }
-        );
-      }
     }
   }
 
@@ -280,11 +282,11 @@ MOI.ContactSection = (function () {
         duration: 0.3,
         ease: 'power2.in',
         onComplete: function () {
-          successMsg.classList.remove('visible');
+          successMsg.className = 'contact__status';
         }
       });
     } else {
-      successMsg.classList.remove('visible');
+      successMsg.className = 'contact__status';
     }
   }
 
