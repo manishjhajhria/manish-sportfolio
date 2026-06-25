@@ -31,7 +31,7 @@ var PORTFOLIO_DATA = {
         'I develop smart AI solutions',
         'I compete in CTF challenges'
       ],
-      bio: 'I am a driven Computer Science Engineering student obsessed with the intersection of Cloud Computing, DevOps, and Cybersecurity. I love architecting robust, secure infrastructures and breathing life into smart AI/ML solutions. Always eager to explore the bleeding edge of technology, I thrive on turning complex problems into elegant, scalable digital experiences.',
+      bio: 'I am a driven Computer Science Engineering student obsessed with the intersection of Cloud Computing, DevOps, and Cybersecurity. I love architecting robust, secure infrastructures and breathing life into smart AI/ML solutions. Always eager to explore the bleeding edge of technology, I thrive on solving complex problems and deploying scalable systems.',
       photo: '',
       location: 'Chandigarh, India',
       email: 'jhajhria0604@gmail.com',
