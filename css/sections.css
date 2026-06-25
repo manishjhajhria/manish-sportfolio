@@ -55,19 +55,53 @@
 
 /* Avatar */
 .hero__avatar-wrapper {
-  margin-bottom: var(--sp-6);
-  display: flex;
-  justify-content: center;
+  position: absolute;
+  bottom: 10%;
+  right: 8%;
+  width: 320px;
+  height: 420px;
+  border-radius: var(--radius-2xl);
+  border: 4px solid var(--clr-indigo);
+  box-shadow: 0 10px 40px rgba(99, 102, 241, 0.2);
+  background: var(--bg-card);
+  z-index: 5;
+  overflow: hidden;
+  transform: rotate(3deg);
+  transition: transform var(--transition-base);
+}
+
+.hero__avatar-wrapper:hover {
+  transform: rotate(0deg) scale(1.02);
 }
 
 .hero__avatar {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  border: 3px solid var(--clr-indigo);
-  box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
-  background: var(--bg-card); /* Fallback if image not found */
+}
+
+@media (max-width: 1200px) {
+  .hero__avatar-wrapper {
+    width: 250px;
+    height: 330px;
+    right: 2%;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero__avatar-wrapper {
+    position: relative;
+    bottom: auto;
+    right: auto;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: 0 auto var(--sp-6) auto;
+    transform: none;
+  }
+  .hero__avatar-wrapper:hover {
+    transform: none;
+  }
 }
 
 .hero__canvas-container {

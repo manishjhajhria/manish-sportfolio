@@ -265,7 +265,7 @@ var PORTFOLIO_DATA = {
       lessDetails: 'Less Details',
       present: 'Present',
       getInTouch: 'Get in Touch',
-      greeting: "Hello, I'm",
+      greeting: 'Welcome! I am',
       knowMe: 'Get to Know',
       me: 'Me',
       aboutSubtitle: 'A glimpse into who I am, what I do, and what drives me.',
