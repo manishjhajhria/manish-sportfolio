@@ -1,0 +1,17 @@
+{
+  "name": "Manish Jhajhria | Cloud & DevOps",
+  "short_name": "Manish Portfolio",
+  "description": "Premium personal portfolio showcasing Cloud, DevOps, and Development skills.",
+  "start_url": "/?source=pwa",
+  "display": "standalone",
+  "background_color": "#090A0F",
+  "theme_color": "#6366f1",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

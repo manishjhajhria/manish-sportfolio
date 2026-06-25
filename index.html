@@ -5,7 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Manish Jhajhria - B.Tech CSE Student & Cloud/DevOps Enthusiast. Portfolio showcasing projects, skills, and experience.">
   <meta name="author" content="Manish Jhajhria">
-  <meta name="theme-color" content="#0f172a">
+  
+  <!-- Web App Manifest for PWA -->
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#6366f1">
+  <link rel="apple-touch-icon" href="/icon.svg">
+
+  <!-- Service Worker Registration -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').then(registration => {
+          console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        }, err => {
+          console.log('ServiceWorker registration failed: ', err);
+        });
+      });
+    }
+  </script>
 
   <!-- Open Graph -->
   <meta property="og:title" content="Manish Jhajhria - Portfolio">
