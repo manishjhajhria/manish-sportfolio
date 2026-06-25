@@ -1,0 +1,354 @@
+/* ============================================================
+   MOI IDENTITÉ — Layout System
+   Premium Portfolio Design System
+   ============================================================ */
+
+/* ──────────────────────────────────────────────────────────
+   CONTAINERS
+   ────────────────────────────────────────────────────────── */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+.container-wide {
+  width: 100%;
+  max-width: var(--container-wide);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+.container-narrow {
+  width: 100%;
+  max-width: var(--container-narrow);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+/* ──────────────────────────────────────────────────────────
+   SECTION BASE
+   ────────────────────────────────────────────────────────── */
+.section {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+  position: relative;
+  overflow: hidden;
+}
+
+.section--flush {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.section--compact {
+  padding-top: var(--sp-16);
+  padding-bottom: var(--sp-16);
+}
+
+.section--full {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+}
+
+/* Alternating section backgrounds */
+.section--alt {
+  background-color: var(--bg-tertiary);
+}
+
+/* ──────────────────────────────────────────────────────────
+   CSS GRID UTILITIES
+   ────────────────────────────────────────────────────────── */
+.grid {
+  display: grid;
+  gap: var(--sp-6);
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--sp-6);
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-6);
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-6);
+}
+
+/* Auto-fit responsive grids */
+.grid-auto-sm {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--sp-6);
+}
+
+.grid-auto-md {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--sp-6);
+}
+
+.grid-auto-lg {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: var(--sp-6);
+}
+
+/* Grid item spanning */
+.col-span-2 { grid-column: span 2; }
+.col-span-3 { grid-column: span 3; }
+.col-span-full { grid-column: 1 / -1; }
+.row-span-2 { grid-row: span 2; }
+
+/* Grid alignment */
+.grid-center {
+  place-items: center;
+}
+
+/* ──────────────────────────────────────────────────────────
+   FLEXBOX UTILITIES
+   ────────────────────────────────────────────────────────── */
+.flex {
+  display: flex;
+}
+
+.flex-inline {
+  display: inline-flex;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-start {
+  display: flex;
+  align-items: flex-start;
+}
+
+.flex-end {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-1 { flex: 1; }
+.flex-auto { flex: auto; }
+.flex-none { flex: none; }
+.flex-shrink-0 { flex-shrink: 0; }
+
+.items-start { align-items: flex-start; }
+.items-center { align-items: center; }
+.items-end { align-items: flex-end; }
+.items-stretch { align-items: stretch; }
+.items-baseline { align-items: baseline; }
+
+.justify-start { justify-content: flex-start; }
+.justify-center { justify-content: center; }
+.justify-end { justify-content: flex-end; }
+.justify-between { justify-content: space-between; }
+.justify-around { justify-content: space-around; }
+
+.self-start { align-self: flex-start; }
+.self-center { align-self: center; }
+.self-end { align-self: flex-end; }
+
+/* ──────────────────────────────────────────────────────────
+   GAP UTILITIES
+   ────────────────────────────────────────────────────────── */
+.gap-0 { gap: 0; }
+.gap-1 { gap: var(--sp-1); }
+.gap-2 { gap: var(--sp-2); }
+.gap-3 { gap: var(--sp-3); }
+.gap-4 { gap: var(--sp-4); }
+.gap-5 { gap: var(--sp-5); }
+.gap-6 { gap: var(--sp-6); }
+.gap-8 { gap: var(--sp-8); }
+.gap-10 { gap: var(--sp-10); }
+.gap-12 { gap: var(--sp-12); }
+.gap-16 { gap: var(--sp-16); }
+
+/* ──────────────────────────────────────────────────────────
+   SPACING UTILITIES
+   ────────────────────────────────────────────────────────── */
+.mx-auto { margin-left: auto; margin-right: auto; }
+.ml-auto { margin-left: auto; }
+.mr-auto { margin-right: auto; }
+.mt-auto { margin-top: auto; }
+.mb-auto { margin-bottom: auto; }
+
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+/* ──────────────────────────────────────────────────────────
+   RESPONSIVE — Desktop-First Breakpoints
+   ────────────────────────────────────────────────────────── */
+
+/* Wide: ≤ 1440px */
+@media (max-width: 1440px) {
+  .container-wide {
+    max-width: 100%;
+    padding-left: var(--sp-8);
+    padding-right: var(--sp-8);
+  }
+}
+
+/* Desktop: ≤ 1200px */
+@media (max-width: 1200px) {
+  :root {
+    --section-padding: var(--sp-20);
+  }
+
+  .container {
+    padding-left: var(--sp-8);
+    padding-right: var(--sp-8);
+  }
+
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Tablet: ≤ 768px */
+@media (max-width: 768px) {
+  :root {
+    --section-padding: var(--sp-16);
+    --container-padding: var(--sp-5);
+  }
+
+  h1 { font-size: var(--fs-4xl); }
+  h2 { font-size: var(--fs-3xl); }
+  h3 { font-size: var(--fs-2xl); }
+  h4 { font-size: var(--fs-xl); }
+
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-4 {
+    grid-template-columns: 1fr;
+  }
+
+  .col-span-2,
+  .col-span-3,
+  .col-span-full {
+    grid-column: 1 / -1;
+  }
+
+  /* Stack flex on mobile */
+  .flex-stack-tablet {
+    flex-direction: column;
+  }
+
+  .section {
+    padding-top: var(--sp-14);
+    padding-bottom: var(--sp-14);
+  }
+}
+
+/* Mobile: ≤ 480px */
+@media (max-width: 480px) {
+  :root {
+    --container-padding: var(--sp-4);
+    --section-padding: var(--sp-12);
+  }
+
+  h1 { font-size: var(--fs-3xl); }
+  h2 { font-size: var(--fs-2xl); }
+  h3 { font-size: var(--fs-xl); }
+
+  .container,
+  .container-wide,
+  .container-narrow {
+    padding-left: var(--sp-4);
+    padding-right: var(--sp-4);
+  }
+
+  .grid-auto-sm,
+  .grid-auto-md,
+  .grid-auto-lg {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding-top: var(--sp-12);
+    padding-bottom: var(--sp-12);
+  }
+
+  /* Stack flex on mobile */
+  .flex-stack-mobile {
+    flex-direction: column;
+  }
+}
+
+/* ──────────────────────────────────────────────────────────
+   VISIBILITY UTILITIES
+   ────────────────────────────────────────────────────────── */
+.hide-desktop { display: none; }
+.hide-tablet { }
+.hide-mobile { }
+
+@media (max-width: 768px) {
+  .hide-tablet { display: none !important; }
+  .hide-desktop { display: revert; }
+  .show-tablet { display: revert !important; }
+}
+
+@media (max-width: 480px) {
+  .hide-mobile { display: none !important; }
+  .show-mobile { display: revert !important; }
+}
+
+/* ──────────────────────────────────────────────────────────
+   OVERFLOW & POSITIONING
+   ────────────────────────────────────────────────────────── */
+.overflow-hidden { overflow: hidden; }
+.overflow-auto { overflow: auto; }
+.overflow-x-auto { overflow-x: auto; }
+
+.relative { position: relative; }
+.absolute { position: absolute; }
+.fixed { position: fixed; }
+.sticky { position: sticky; }
+.inset-0 { inset: 0; }
+
+.w-full { width: 100%; }
+.h-full { height: 100%; }
+.min-h-screen { min-height: 100vh; min-height: 100dvh; }

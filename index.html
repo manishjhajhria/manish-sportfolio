@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en" class="theme-dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Manish Jhajhria - B.Tech CSE Student & Cloud/DevOps Enthusiast. Portfolio showcasing projects, skills, and experience.">
+  <meta name="author" content="Manish Jhajhria">
+  <meta name="theme-color" content="#0f172a">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Manish Jhajhria - Portfolio">
+  <meta property="og:description" content="Personal portfolio of Manish Jhajhria.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="fr_FR">
+  <meta property="og:url" content="https://manishjhajhria.com">
+  <meta property="og:image" content="https://manishjhajhria.com/og-image.jpg">
+
+  <title>Manish Jhajhria - B.Tech CSE Student & Cloud/DevOps Enthusiast</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- CSS Design System -->
+  <link rel="stylesheet" href="css/variables.css?v=5">
+  <link rel="stylesheet" href="css/base.css?v=5">
+  <link rel="stylesheet" href="css/theme.css?v=5">
+  <link rel="stylesheet" href="css/layout.css?v=5">
+  <link rel="stylesheet" href="css/components.css?v=5">
+  <link rel="stylesheet" href="css/animations.css?v=5">
+  <link rel="stylesheet" href="css/sections.css?v=5">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+<body class="loading">
+
+  <!-- ═══════════════════════════════════════════
+       PRELOADER
+       ═══════════════════════════════════════════ -->
+  <div id="preloader" class="preloader">
+    <div class="preloader__brand" data-lang-key="personal.name">Manish Jhajhria</div>
+    <div class="preloader__bar">
+      <div class="preloader__bar-fill"></div>
+    </div>
+    <div class="preloader__text" data-lang-key="ui.loading">Loading...</div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       NAVIGATION
+       ═══════════════════════════════════════════ -->
+  <nav class="navbar" id="navbar" aria-label="Main navigation">
+    <div class="navbar__inner">
+      <!-- Brand -->
+      <a href="#hero" class="navbar__brand" aria-label="Go to top">
+        <span class="navbar__logo" data-lang-key="personal.name">Manish Jhajhria</span>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <ul class="navbar__links" role="menubar">
+        <li><a href="#hero" class="navbar__link nav-link active" data-lang-key="nav.home">Home</a></li>
+        <li><a href="#education" class="navbar__link nav-link" data-lang-key="nav.education">Education</a></li>
+        <li><a href="#experience" class="navbar__link nav-link" data-lang-key="nav.experience">Experience</a></li>
+        <li><a href="#skills" class="navbar__link nav-link" data-lang-key="nav.skills">Skills</a></li>
+        <li><a href="#projects" class="navbar__link nav-link" data-lang-key="nav.projects">Projects</a></li>
+        <li><a href="#contact" class="navbar__link nav-link" data-lang-key="nav.contact">Contact</a></li>
+      </ul>
+
+      <!-- Controls: Theme, Language, Hamburger -->
+      <div class="navbar__controls">
+        <!-- Language Toggle -->
+        <div class="lang-toggle" data-lang="en" id="lang-toggle" aria-label="Toggle language">
+          <span class="lang-toggle__slider"></span>
+          <span class="lang-toggle__option active" data-lang-value="en">EN</span>
+          <span class="lang-toggle__option" data-lang-value="fr">FR</span>
+        </div>
+
+        <!-- Theme Toggle -->
+        <button class="btn-icon" id="theme-toggle" data-theme-toggle aria-label="Toggle theme" title="Toggle dark/light mode">
+          <i data-lucide="moon"></i>
+        </button>
+
+        <!-- Hamburger (mobile) -->
+        <button class="navbar__hamburger" data-mobile-toggle aria-label="Toggle menu" aria-expanded="false">
+          <span class="navbar__hamburger-line"></span>
+          <span class="navbar__hamburger-line"></span>
+          <span class="navbar__hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="navbar__mobile-menu nav-menu" aria-label="Mobile navigation">
+      <a href="#hero" class="navbar__mobile-link nav-link" data-lang-key="nav.home">Home</a>
+      <a href="#education" class="navbar__mobile-link nav-link" data-lang-key="nav.education">Education</a>
+      <a href="#experience" class="navbar__mobile-link nav-link" data-lang-key="nav.experience">Experience</a>
+      <a href="#skills" class="navbar__mobile-link nav-link" data-lang-key="nav.skills">Skills</a>
+      <a href="#projects" class="navbar__mobile-link nav-link" data-lang-key="nav.projects">Projects</a>
+      <a href="#certifications" class="navbar__mobile-link nav-link" data-lang-key="nav.certifications">Certifications</a>
+      <a href="#testimonials" class="navbar__mobile-link nav-link" data-lang-key="nav.testimonials">Testimonials</a>
+      <a href="#resume" class="navbar__mobile-link nav-link" data-lang-key="nav.resume">Resume</a>
+      <a href="#contact" class="navbar__mobile-link nav-link" data-lang-key="nav.contact">Contact</a>
+    </div>
+
+    <!-- Mobile Backdrop -->
+    <div class="navbar__mobile-backdrop"></div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════
+       HERO SECTION
+       ═══════════════════════════════════════════ -->
+  <section id="hero" class="hero section section--full">
+    <!-- Decorative Orbs -->
+    <div class="hero__orb hero__orb--1" data-parallax data-speed="0.03"></div>
+    <div class="hero__orb hero__orb--2" data-parallax data-speed="0.05"></div>
+    <div class="hero__orb hero__orb--3" data-parallax data-speed="0.04"></div>
+
+    <div class="hero__content">
+      <p class="hero__greeting animate-on-scroll">
+        <span class="hero__greeting-emoji">👋</span>
+        <span data-lang-key="ui.greeting">Hello, I'm</span>
+      </p>
+
+      <h1 class="hero__name" data-lang-key="personal.name">Manish Jhajhria</h1>
+
+      <p class="hero__title" data-lang-key="personal.title">Full Stack Developer & Creative Technologist</p>
+
+      <div class="hero__tagline">
+        <span data-typewriter></span>
+        <span class="hero__tagline-cursor typewriter-cursor"></span>
+      </div>
+      
+      <!-- Bio & Stats Summary -->
+      <div style="margin: var(--sp-6) 0; max-width: 600px; margin-left: auto; margin-right: auto;">
+        <p class="about__bio" data-lang-key="personal.bio" style="font-size: var(--fs-md); color: var(--text-secondary); line-height: var(--lh-relaxed); margin-bottom: var(--sp-6);">
+          A passionate developer with 5+ years of experience building modern web applications. I combine technical expertise with creative vision to deliver exceptional digital products.
+        </p>
+        <div class="about__facts" id="about-facts" style="display: flex; gap: var(--sp-4); justify-content: center; flex-wrap: wrap;">
+          <div class="about__fact">
+            <div class="about__fact-icon">🚀</div>
+            <div class="about__fact-value" data-stat="yearsExperience">5+</div>
+            <div class="about__fact-label" data-lang-key="ui.yearsExp">Years Experience</div>
+          </div>
+          <div class="about__fact">
+            <div class="about__fact-icon">💼</div>
+            <div class="about__fact-value" data-stat="projectsCompleted">50+</div>
+            <div class="about__fact-label" data-lang-key="ui.projectsDone">Projects Done</div>
+          </div>
+          <div class="about__fact">
+            <div class="about__fact-icon">🏆</div>
+            <div class="about__fact-value" data-stat="certifications">8</div>
+            <div class="about__fact-label" data-lang-key="ui.certifications">Certifications</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__cta">
+        <a href="#projects" class="btn btn-primary btn-lg">
+          <i data-lucide="folder-open" style="width:18px;height:18px"></i>
+          <span data-lang-key="ui.viewProjects">View Projects</span>
+        </a>
+        <a href="#contact" class="btn btn-secondary btn-lg">
+          <i data-lucide="send" style="width:18px;height:18px"></i>
+          <span data-lang-key="ui.getInTouch">Get in Touch</span>
+        </a>
+      </div>
+
+
+    </div>
+
+    <a href="#about" class="hero__scroll-indicator" aria-label="Scroll down">
+      <span data-lang-key="ui.scrollDown">Scroll Down</span>
+      <span class="hero__scroll-indicator-icon">
+        <i data-lucide="chevron-down"></i>
+      </span>
+    </a>
+  </section>
+
+
+
+  <!-- ═══════════════════════════════════════════
+       EDUCATION SECTION
+       ═══════════════════════════════════════════ -->
+  <section id="education" class="section section--alt">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <span class="section-header__label" data-lang-key="nav.education">Education</span>
+        <h2 class="section-header__title">
+          <span data-lang-key="ui.academic">Academic</span> <span class="text-gradient" data-lang-key="ui.journey">Journey</span>
+        </h2>
+        <p class="section-header__subtitle" data-lang-key="ui.educationSubtitle">My educational background and academic achievements.</p>
+        <span class="section-header__accent"></span>
+      </div>
+
+      <!-- Timeline rendered dynamically by timeline.js -->
+      <div class="education__timeline" id="education-timeline" data-timeline="education">
+        <!-- JS will inject timeline items here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       EXPERIENCE SECTION
+       ═══════════════════════════════════════════ -->
+  <section id="experience" class="section">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <span class="section-header__label" data-lang-key="nav.experience">Experience</span>
+        <h2 class="section-header__title">
+          <span data-lang-key="ui.work">Work</span> <span class="text-gradient" data-lang-key="ui.experience">Experience</span>
+        </h2>
+        <p class="section-header__subtitle" data-lang-key="ui.experienceSubtitle">My professional journey and career milestones.</p>
+        <span class="section-header__accent"></span>
+      </div>
+
+      <!-- Experience cards rendered dynamically by timeline.js -->
+      <div class="experience__list" id="experience-list" data-timeline="experience">
+        <!-- JS will inject experience cards here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SKILLS SECTION
+       ═══════════════════════════════════════════ -->
+  <section id="skills" class="section section--alt">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <span class="section-header__label" data-lang-key="nav.skills">Skills</span>
+        <h2 class="section-header__title">
+          <span data-lang-key="ui.my">My</span> <span class="text-gradient" data-lang-key="ui.toolbox">Toolbox</span>
+        </h2>
+        <p class="section-header__subtitle" data-lang-key="ui.skillsSubtitle">Technologies and tools I work with to bring ideas to life.</p>
+        <span class="section-header__accent"></span>
+      </div>
+
+      <!-- Filter tabs -->
+      <div class="skills__filters" id="skills-filters" data-skill-tabs>
+        <!-- JS will inject filter tabs here -->
+      </div>
+
+      <!-- Skills grid -->
+      <div class="skills__grid" id="skills-grid" data-skill-grid>
+        <!-- JS will inject skill items here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       PROJECTS SECTION
+       ═══════════════════════════════════════════ -->
+  <section id="projects" class="section">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <span class="section-header__label" data-lang-key="nav.projects">Projects</span>
+        <h2 class="section-header__title">
+          <span data-lang-key="ui.featured">Featured</span> <span class="text-gradient" data-lang-key="ui.works">Works</span>
+        </h2>
+        <p class="section-header__subtitle" data-lang-key="ui.projectsSubtitle">Some of my recent projects that showcase my skills and creativity.</p>
+        <span class="section-header__accent"></span>
+      </div>
+
+      <!-- Filter buttons -->
+      <div class="projects__filters" id="projects-filters" data-project-filters>
+        <!-- JS will inject filter buttons here -->
+      </div>
+
+      <!-- Projects grid -->
+      <div class="projects__grid" id="projects-grid" data-project-grid>
+        <!-- JS will inject project cards here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       CERTIFICATIONS SECTION
+       ═══════════════════════════════════════════ -->
+  <section id="certifications" class="section section--alt">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <span class="section-header__label" data-lang-key="nav.certifications">Certifications</span>
+        <h2 class="section-header__title">
+          <span data-lang-key="ui.certified">Certified</span> <span class="text-gradient" data-lang-key="ui.expertise">Expertise</span>
+        </h2>
+        <p class="section-header__subtitle" data-lang-key="ui.certsSubtitle">Professional certifications that validate my expertise.</p>
+        <span class="section-header__accent"></span>
+      </div>
+
+      <div class="certifications__grid" id="certifications-grid">
+        <!-- Static cards — JS can re-render for language if needed -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       TESTIMONIALS SECTION
+       ═══════════════════════════════════════════ -->
+  <section id="testimonials" class="section">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <span class="section-header__label" data-lang-key="nav.testimonials">Testimonials</span>
+        <h2 class="section-header__title">
+          <span data-lang-key="ui.what">What</span> <span class="text-gradient" data-lang-key="ui.theySay">They Say</span>
+        </h2>
+        <p class="section-header__subtitle" data-lang-key="ui.testimonialsSubtitle">Words from colleagues and clients I've had the pleasure of working with.</p>
+        <span class="section-header__accent"></span>
+      </div>
+
+      <div class="testimonials__wrapper" id="testimonials-wrapper">
+        <div class="testimonials__carousel">
+          <div class="testimonials__track" id="testimonials-track">
+            <!-- JS will inject testimonial slides here -->
+          </div>
+        </div>
+
+        <div class="testimonials__nav">
+          <button class="testimonials__nav-btn" id="testimonial-prev" aria-label="Previous testimonial">
+            <i data-lucide="chevron-left"></i>
+            <!-- Populated by JS -->
+          </div>
+          <div class="testimonials__dots" id="testimonials-dots">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         CONTACT SECTION
+         ═══════════════════════════════════════════ -->
+    <section class="section contact" id="contact">
+      <div class="container">
+        <div class="section__header animate-on-scroll">
+          <div class="section__subtitle">
+            <span data-lang-key="ui.letsWork">Let's Work</span>
+            <strong data-lang-key="ui.together">Together</strong>
+          </div>
+          <h2 class="section__title" data-lang-key="sectionHeadings.contact">Get In Touch</h2>
+        </div>
+
+        <div class="contact__grid">
+          <!-- Contact Info -->
+          <div class="contact__info animate-on-scroll">
+            <h3 class="contact__info-title" data-lang-key="contact.heading">Let's Work Together</h3>
+            <p class="contact__info-text" data-lang-key="contact.subtitle">Have a project in mind? Let's discuss how I can help bring your vision to life.</p>
+
+            <div class="contact__cards">
+              <a href="mailto:jhajhria0604@gmail.com" class="contact__card">
+                <div class="contact__card-icon">
+                  <i data-lucide="mail"></i>
+                </div>
+                <div class="contact__card-content">
+                  <div class="contact__card-label" data-lang-key="ui.email">Email</div>
+                  <div class="contact__card-value" data-lang-key="personal.email">jhajhria0604@gmail.com</div>
+                </div>
+              </a>
+
+              <a href="tel:+919057115805" class="contact__card" id="contact-phone-card">
+                <div class="contact__card-icon">
+                  <i data-lucide="phone"></i>
+                </div>
+                <div class="contact__card-content">
+                  <div class="contact__card-label" data-lang-key="ui.phone">Phone</div>
+                  <div class="contact__card-value" id="contact-phone" data-lang-key="personal.phone">+91 9057115805</div>
+                </div>
+              </a>
+
+              <div class="contact__card">
+                <div class="contact__card-icon">
+                  <i data-lucide="map-pin"></i>
+                </div>
+                <div class="contact__card-content">
+                  <div class="contact__card-label" data-lang-key="ui.location">Location</div>
+                  <div class="contact__card-value" id="contact-location" data-lang-key="personal.location">Paris, France</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div class="contact__form-wrapper animate-on-scroll" data-animate-delay="200">
+            <form class="contact__form" id="contact-form" novalidate>
+              
+              <div class="contact__form-group">
+                <input type="text" id="name" class="contact__input" required placeholder=" ">
+                <label for="name" class="contact__label" data-lang-key="contact.formLabels.name">Your Name</label>
+                <span class="contact__error" id="error-name" data-lang-key="contact.validation.required">This field is required</span>
+              </div>
+
+              <div class="contact__form-group">
+                <input type="email" id="email" class="contact__input" required placeholder=" ">
+                <label for="email" class="contact__label" data-lang-key="contact.formLabels.email">Your Email</label>
+                <span class="contact__error" id="error-email" data-lang-key="contact.validation.emailInvalid">Please enter a valid email</span>
+              </div>
+
+              <div class="contact__form-group">
+                <input type="text" id="subject" class="contact__input" required placeholder=" ">
+                <label for="subject" class="contact__label" data-lang-key="contact.formLabels.subject">Subject</label>
+                <span class="contact__error" id="error-subject" data-lang-key="contact.validation.required">This field is required</span>
+              </div>
+
+              <div class="contact__form-group">
+                <textarea id="message" class="contact__input contact__textarea" required placeholder=" "></textarea>
+                <label for="message" class="contact__label" data-lang-key="contact.formLabels.message">Your Message</label>
+                <span class="contact__error" id="error-message" data-lang-key="contact.validation.messageTooShort">Message must be at least 10 characters</span>
+              </div>
+
+              <button type="submit" class="btn btn--primary btn--full" id="submit-btn">
+                <span class="btn__text" data-lang-key="contact.formLabels.send">Send Message</span>
+                <i data-lucide="send" class="btn__icon"></i>
+                <div class="btn__loader"></div>
+              </button>
+
+              <div class="contact__success" id="contact-success">
+                <i data-lucide="check-circle-2"></i>
+                <span data-lang-key="contact.formLabels.sent">Message sent successfully!</span>
+              </div>
+
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+       ═══════════════════════════════════════════ -->
+  <footer class="footer" id="footer">
+    <div class="footer__inner">
+      <div class="footer__brand" data-lang-key="personal.name">Manish Jhajhria</div>
+      <p class="footer__tagline" data-lang-key="footer.tagline">Crafted with passion & code</p>
+
+      <div class="footer__socials">
+        <a href="#" class="footer__social-link" aria-label="Twitter" target="_blank" rel="noopener">
+          <i data-lucide="twitter"></i>
+        </a>
+        <a href="#" class="footer__social-link" aria-label="Dribbble" target="_blank" rel="noopener">
+          <i data-lucide="dribbble"></i>
+        </a>
+      </div>
+
+      <div class="footer__divider"></div>
+
+      <p class="footer__copyright" data-lang-key="footer.copyright">&copy; 2026 Manish Jhajhria. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════
+       BACK TO TOP
+       ═══════════════════════════════════════════ -->
+  <button class="back-to-top" id="back-to-top" data-back-to-top aria-label="Back to top">
+    <i data-lucide="arrow-up"></i>
+  </button>
+
+  <!-- ═══════════════════════════════════════════
+       MODE TOGGLE (2D ↔ 3D) — Phase 2
+       ═══════════════════════════════════════════ -->
+  <button class="mode-toggle" id="mode-toggle" data-mode-toggle aria-label="Toggle 3D mode" title="Toggle 3D/2D view">
+    <i data-lucide="box"></i>
+  </button>
+
+  <!-- ═══════════════════════════════════════════
+       JAVASCRIPT — Load Order Matters!
+       ═══════════════════════════════════════════ -->
+  <!-- External Libraries -->
+  <!-- GSAP for Animations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <!-- Three.js for 3D Mode -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <!-- Custom Scripts (Modules) -->
+  <script src="js/data.js?v=5"></script>
+  <script src="js/lang.js?v=5"></script>
+  <script src="js/theme.js?v=5"></script>
+  <script src="js/three-scene.js?v=5"></script>
+  <script src="js/sections/hero.js?v=5"></script>
+  <script src="js/sections/timeline.js?v=5"></script>
+  <script src="js/sections/skills.js?v=5"></script>
+  <script src="js/sections/projects.js?v=5"></script>
+  <script src="js/sections/contact.js?v=5"></script>
+  <script src="js/sections/certs-testimonials.js?v=5"></script>
+  
+  <!-- Main App Entry -->
+  <script src="js/app.js?v=5"></script>
+
+</body>
+</html>
