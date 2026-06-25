@@ -45,13 +45,31 @@
 }
 
 .hero__orb--3 {
-  width: 300px;
-  height: 300px;
-  top: 40%;
-  left: 50%;
-  background: var(--gradient-hero-orb-3);
-  animation: orbFloat3 12s ease-in-out infinite;
+  width: 500px;
+  height: 500px;
+  bottom: -20%;
+  left: 20%;
+  background: radial-gradient(circle at center, rgba(168, 85, 247, 0.15) 0%, transparent 60%);
+  animation: float 25s infinite ease-in-out reverse;
 }
+
+/* Avatar */
+.hero__avatar-wrapper {
+  margin-bottom: var(--sp-6);
+  display: flex;
+  justify-content: center;
+}
+
+.hero__avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--clr-indigo);
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+  background: var(--bg-card); /* Fallback if image not found */
+}
+
 .hero__canvas-container {
   position: fixed;
   top: 0;
